@@ -1,5 +1,6 @@
 import sys
 import time
+import os
 import random
 import datetime
 import telepot
@@ -14,21 +15,29 @@ from GitApi import GitHub
 from telepot.delegate import per_inline_from_id, create_open, pave_event_space
 from goodreads import client
 from goodreads import group
+from flask import Flask, request
 
+try:
+    from Queue import Queue
+except ImportError:
+    from queue import Queue
+
+app = Flask(__name__)
 
 gc = client.GoodreadsClient('nTRaECtlyOjSmjJnLKRaiw', 'hCXp9GKlAe3sk1QIj0jXLF4UGLt9vfj54hDAfzHY')
 
+SECRET = '/bot' + '292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY'
 
 # Bot Configuration
 config = ConfigParser()
 config.read_file(open('config.ini'))
 
+
 # Connecting the telegram API
 # Updater will take the information and dispatcher connect the message to
 # the bot
-up = Updater(token='292106014:AAEdLmqqhYHhDncqidNtFSNx9Mj7Fil50_8')
+up = Updater(token='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
 dispatcher = up.dispatcher
-
 
 # Home function
 def start(bot, update):
@@ -129,8 +138,19 @@ dispatcher.add_handler(CommandHandler('current', current, pass_args=False))
 dispatcher.add_handler(CommandHandler('to_read', to_read, pass_args=False))
 
 
+
+
+@app.route(SECRET, methods=['GET', 'POST'])
+def pass_update():
+    UPDATE_QUEUE.put(request.data)  # pass update to bot
+    return 'OK'
+
+
+
 up.start_polling(bootstrap_retries=5)
 up.idle() 
+
+
 
 '''class InlineHandler(telepot.helper.InlineUserHandler, telepot.helper.AnswererMixin):
 
