@@ -28,11 +28,7 @@ TOKEN = '292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY'
 PORT = int(os.environ.get('PORT', '5000'))
 updater = Updater(TOKEN)
 # add handlers
-updater.start_webhook(listen="0.0.0.0",
-                      port=PORT,
-                      url_path=TOKEN)
-updater.bot.setWebhook("https://read1.herokuapp.com/" + TOKEN)
-updater.idle()
+
 
 gc = client.GoodreadsClient('nTRaECtlyOjSmjJnLKRaiw', 'hCXp9GKlAe3sk1QIj0jXLF4UGLt9vfj54hDAfzHY')
 
@@ -154,7 +150,11 @@ dispatcher.add_handler(CommandHandler('to_read', to_read, pass_args=False))
 def pass_update():
     UPDATE_QUEUE.put(request.data)  # pass update to bot
     return 'OK'
-
+updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=TOKEN)
+updater.bot.setWebhook("https://read1.herokuapp.com/" + TOKEN)
+updater.idle()
 
 updater.start_webhook(listen='127.0.0.1', port=5000, url_path='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
 updater.bot.setWebhook(webhook_url='https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY',
