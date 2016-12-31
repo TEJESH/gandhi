@@ -46,7 +46,9 @@ up = Updater(token='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
 dispatcher = up.dispatcher
 
 
-@app.route('/HOOK', methods=['POST'])
+@app.route("/")
+def hello():
+    return "Hello World!"
 # Home function
 def start(bot, update):
     # Home message
@@ -162,9 +164,9 @@ def set_webhook():
         return "webhook setup failed"
 
 
-@app.route('/')
-def index():
-    return '.'
+
+if __name__ == "__main__":
+    app.run()
 
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
