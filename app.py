@@ -24,6 +24,16 @@ except ImportError:
 
 app = Flask(__name__)
 
+TOKEN = '292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY'
+PORT = int(os.environ.get('PORT', '5000'))
+updater = Updater(TOKEN)
+# add handlers
+updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=TOKEN)
+updater.bot.setWebhook("https://read1.herokuapp.com/" + TOKEN)
+updater.idle()
+
 gc = client.GoodreadsClient('nTRaECtlyOjSmjJnLKRaiw', 'hCXp9GKlAe3sk1QIj0jXLF4UGLt9vfj54hDAfzHY')
 
 SECRET = '/bot' + '292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY'
@@ -146,6 +156,9 @@ def pass_update():
     return 'OK'
 
 
+updater.start_webhook(listen='127.0.0.1', port=5000, url_path='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
+updater.bot.setWebhook(webhook_url='https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY',
+                       certificate=open('cert.pem.read1', 'rb'))
 
 up.start_polling(bootstrap_retries=5)
 up.idle() 
