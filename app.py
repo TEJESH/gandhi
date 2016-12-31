@@ -45,6 +45,8 @@ config.read_file(open('config.ini'))
 up = Updater(token='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
 dispatcher = up.dispatcher
 
+
+@app.route('/HOOK', methods=['POST'])
 # Home function
 def start(bot, update):
     # Home message
@@ -146,10 +148,24 @@ dispatcher.add_handler(CommandHandler('to_read', to_read, pass_args=False))
 
 
 
-@app.route(SECRET, methods=['GET', 'POST'])
+'''@app.route(SECRET, methods=['GET', 'POST'])
 def pass_update():
     UPDATE_QUEUE.put(request.data)  # pass update to bot
-    return 'OK'
+    return 'OK''''
+
+@app.route('/set_webhook', methods=['GET', 'POST'])
+def set_webhook():
+    s = bot.setWebhook('https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY/HOOK')
+    if s:
+        return "webhook setup ok"
+    else:
+        return "webhook setup failed"
+
+
+@app.route('/')
+def index():
+    return '.'
+
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
