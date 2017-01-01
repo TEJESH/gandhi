@@ -49,6 +49,16 @@ dispatcher = up.dispatcher
 @app.route("/")
 def hello():
     return "Hello World!"
+
+
+@app.route('/set_webhook', methods=['GET', 'POST'])
+def set_webhook():
+    s = bot.setWebhook('https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY/HOOK')
+    if s:
+        return "webhook setup ok"
+    else:
+        return "webhook setup failed"
+    
 # Home function
 def start(bot, update):
     # Home message
@@ -155,18 +165,14 @@ def pass_update():
     UPDATE_QUEUE.put(request.data)  # pass update to bot
     return 'OK''''
 
-@app.route('/set_webhook', methods=['GET', 'POST'])
-def set_webhook():
-    s = bot.setWebhook('https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY/HOOK')
-    if s:
-        return "webhook setup ok"
-    else:
-        return "webhook setup failed"
 
 
 
-if __name__ == "__main__":
-    app.run()
+
+if __name__ == '__main__':
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
 
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
