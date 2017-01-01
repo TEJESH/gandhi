@@ -7,3 +7,4 @@ certifi
 python-telegram-bot>=5.2.0
 flask
 gunicorn
+telepot>=10.2
