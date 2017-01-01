@@ -175,7 +175,7 @@ updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
 updater.bot.setWebhook("https://read1.herokuapp.com/" + TOKEN)
-updater.idle()
+
 
 '''updater.start_webhook(listen='127.0.0.1', port=5000, url_path='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
 updater.bot.setWebhook(webhook_url='https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY',
