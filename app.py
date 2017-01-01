@@ -163,10 +163,7 @@ dispatcher.add_handler(CommandHandler('to_read', to_read, pass_args=False))
 '''@app.route(SECRET, methods=['GET', 'POST'])
 def pass_update():
     UPDATE_QUEUE.put(request.data)  # pass update to bot
-    return 'OK''''
-
-
-
+    return 'OK'  '''
 
 
 if __name__ == '__main__':
