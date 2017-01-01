@@ -177,9 +177,9 @@ updater.start_webhook(listen="0.0.0.0",
 updater.bot.setWebhook("https://read1.herokuapp.com/" + TOKEN)
 updater.idle()
 
-updater.start_webhook(listen='127.0.0.1', port=5000, url_path='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
+'''updater.start_webhook(listen='127.0.0.1', port=5000, url_path='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
 updater.bot.setWebhook(webhook_url='https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY',
-                       certificate=open('cert.pem.read1', 'rb'))
+                       certificate=open('cert.pem.read1', 'rb')) '''
 
 up.start_polling(bootstrap_retries=5)
 up.idle() 
