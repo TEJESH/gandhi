@@ -64,13 +64,13 @@ def start(bot, update):
     # Home message
     msg = "Hello {user_name}! I'm {bot_name}. \n"
     msg += "What would you like to do? \n"
-    msg += "/read + number - book name, and author \n"
-    msg += "/current + number - book name, and author \n"
-    msg += "/to_read + number - book name, and author \n"
-    msg += "Ex: /listing HeavenH | /info HeavenH \n"
+    msg += "/read + <search item> - book name, and link \n"
+    msg += "/current - Time \n"
+    msg += "/to_read - Hello \n"
+    '''msg += "Ex: /listing HeavenH | /info HeavenH \n" '''
     msg += "Ex: /read python \n"
     msg += "Ex: /current \n"
-    msg += "Ex: /to_read "
+    msg += "Ex: /to_read "  
 
     # Send the message
     bot.send_message(chat_id=update.message.chat_id,
