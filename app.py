@@ -110,7 +110,7 @@ def info(bot, update, args):
 def read(bot, update, args):
     #print args
     #user = re.sub(r'', u'', '%20', str(args))
-    st=' ' 
+    st='' 
     for item in args:
         st+=item.encode('UTF8')+' '
         
