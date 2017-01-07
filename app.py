@@ -109,10 +109,11 @@ def info(bot, update, args):
 
 def read(bot, update, args):
     print args
+    user = re.sub(r'', u'', '%20', str(args))
     for user in args:
-        userr = re.sub(' ', '%20', str(args))
+        
          #book = gc.book(user)
-        print userr
+        print user
         bookn = gc.search_books_links(userr)
 
         bookm = gc.search_books(userr)
