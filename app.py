@@ -108,15 +108,15 @@ def info(bot, update, args):
                          text=gh.get_info(user))
 
 def read(bot, update, args):
-    print args
-    user = re.sub(r'', u'', '%20', str(args))
+    #print args
+    #user = re.sub(r'', u'', '%20', str(args))
     for user in args:
         
          #book = gc.book(user)
         print user
-        bookn = gc.search_books_links(userr)
+        bookn = gc.search_books_links(user)
 
-        bookm = gc.search_books(userr)
+        bookm = gc.search_books(user)
          
         bookr = re.sub(', u', '\n\n', str(bookn))
         bookm1 = re.sub(',', '\n', str(bookm))
