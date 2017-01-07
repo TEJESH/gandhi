@@ -110,16 +110,21 @@ def info(bot, update, args):
 def read(bot, update, args):
     #print args
     #user = re.sub(r'', u'', '%20', str(args))
-    for user in args:
+    st=' ' 
+    for item in args:
+        st+=item.encode('UTF8')+' '
         
+    #for user in st:
+               
          #book = gc.book(user)
-        print user
-        bookn = gc.search_books_links(user)
+    print st
+        
+    bookn = gc.search_books_links(st)
 
-        bookm = gc.search_books(user)
+    bookm = gc.search_books(st)
          
-        bookr = re.sub(', u', '\n\n', str(bookn))
-        bookm1 = re.sub(',', '\n', str(bookm))
+    bookr = re.sub(', u', '\n\n', str(bookn))
+    bookm1 = re.sub(',', '\n', str(bookm))
 
          #REMOVE_LIST = ["[u", "]"]
 
@@ -134,8 +139,8 @@ def read(bot, update, args):
         #msg = random.randint(1,6)
         #bot.sendMessage(chat_id=update.message.chat_id, text=msg)
          #bot.sendMessage(chat_id=update.message.chat_id, text=str(book))
-        bot.sendMessage(chat_id=update.message.chat_id, text=bookm1)
-        bot.sendMessage(chat_id=update.message.chat_id, text=bookr)
+    bot.sendMessage(chat_id=update.message.chat_id, text=bookm1)
+    bot.sendMessage(chat_id=update.message.chat_id, text=bookr)
         # bot.sendMessage(chat_id=update.message.chat_id, text=str(bookn['authors']))
          #bot.sendMessage(chat_id=update.message.chat_id, text=str(authors))
          #bot.sendMessage(chat_id=update.message.chat_id, text=str(links))
