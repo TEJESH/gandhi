@@ -109,14 +109,15 @@ def info(bot, update, args):
 
 def read(bot, update, args):
     for user in args:
-         userr = re.sub(' ', '%20', str(user))
+        userr = re.sub(' ', '%20', str(user))
          #book = gc.book(user)
-         bookn = gc.search_books_links(userr)
+        print userr
+        bookn = gc.search_books_links(userr)
 
-         bookm = gc.search_books(userr)
+        bookm = gc.search_books(userr)
          
-         bookr = re.sub(', u', '\n\n', str(bookn))
-         bookm1 = re.sub(',', '\n', str(bookm))
+        bookr = re.sub(', u', '\n\n', str(bookn))
+        bookm1 = re.sub(',', '\n', str(bookm))
 
          #REMOVE_LIST = ["[u", "]"]
 
