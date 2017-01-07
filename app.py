@@ -108,7 +108,8 @@ def info(bot, update, args):
                          text=gh.get_info(user))
 
 def read(bot, update, args):
-    #for user in args:
+    print args
+    for user in args:
         userr = re.sub(' ', '%20', str(args))
          #book = gc.book(user)
         print userr
