@@ -130,7 +130,7 @@ def read(bot, update, args):
     
     sc='' 
     for item in bookm:
-        sc+=item.encode('UTF8')+' '
+        sc+=item.encode('UTF8')+'\n'
 
          #REMOVE_LIST = ["[u", "]"]
 
