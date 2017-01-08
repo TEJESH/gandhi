@@ -124,11 +124,13 @@ def read(bot, update, args):
     bookm = gc.search_books(st)
          
     #bookr = re.sub(', u', '\n\n', str(bookn))
-    sc='' 
-    for item in bookm:
-        sc+=item.encode('UTF8')+' '
+    
         
-    #bookm1 = re.sub(' ', '\n', str(sc))
+    bookm1 = re.sub(', u', '\n', str(sc))
+    
+    sc='' 
+    for item in bookm1:
+        sc+=item.encode('UTF8')+' '
 
          #REMOVE_LIST = ["[u", "]"]
 
