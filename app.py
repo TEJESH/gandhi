@@ -126,10 +126,10 @@ def read(bot, update, args):
     #bookr = re.sub(', u', '\n\n', str(bookn))
     
         
-    bookm1 = re.sub(', u', '\n', str(sc))
+    #bookm1 = re.sub(', u', '\n', str(sc))
     
     sc='' 
-    for item in bookm1:
+    for item in bookm:
         sc+=item.encode('UTF8')+' '
 
          #REMOVE_LIST = ["[u", "]"]
