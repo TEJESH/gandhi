@@ -128,7 +128,7 @@ def read(bot, update, args):
     for item in bookm:
         sc+=item.encode('UTF8')+' '
         
-    #bookm1 = re.sub(', u', '\n', str(bookm))
+    bookm1 = re.sub(' ', '\n', str(sc))
 
          #REMOVE_LIST = ["[u", "]"]
 
@@ -143,7 +143,7 @@ def read(bot, update, args):
         #msg = random.randint(1,6)
         #bot.sendMessage(chat_id=update.message.chat_id, text=msg)
          #bot.sendMessage(chat_id=update.message.chat_id, text=str(book))
-    bot.sendMessage(chat_id=update.message.chat_id, text=sc)
+    bot.sendMessage(chat_id=update.message.chat_id, text=bookm1)
     #bot.sendMessage(chat_id=update.message.chat_id, text=bookr)
         # bot.sendMessage(chat_id=update.message.chat_id, text=str(bookn['authors']))
          #bot.sendMessage(chat_id=update.message.chat_id, text=str(authors))
