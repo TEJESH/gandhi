@@ -92,7 +92,7 @@ class GoodreadsClient():
 
             resp = self.request("book/show", {'id': book_id})
             resp1 = self.request("book/show", {'id': book_id})
-            return (GoodreadsBook(resp['book'], self).title)+' '+(GoodreadsBook(resp1['book'], self).author)+'\n'+(GoodreadsBook(resp1['book'], self).link)+'\n'
+            return (GoodreadsBook(resp['book'], self).title)+(GoodreadsBook(resp1['book'], self).link)+'\n'
             
         elif isbn:
             resp = self.request("book/isbn", {'isbn': isbn})
