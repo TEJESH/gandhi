@@ -1,2 +1,3 @@
 # gandhi
-getting book details from good reads and show on telegram as bot
+getting book details from good reads.
+https://storebot.me/bot/gandhi_bot
