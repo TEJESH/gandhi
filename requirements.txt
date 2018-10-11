@@ -4,7 +4,7 @@ rauth
 future>=0.15.2
 urllib3>=1.10
 certifi
-python-telegram-bot == 4.0rc1
+python-telegram-bot == 9.0.0
 flask
 gunicorn
 telepot>=10.2.0
