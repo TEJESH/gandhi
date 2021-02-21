@@ -32,7 +32,7 @@ updater = Updater(TOKEN)
 
 gc = client.GoodreadsClient('nTRaECtlyOjSmjJnLKRaiw', 'hCXp9GKlAe3sk1QIj0jXLF4UGLt9vfj54hDAfzHY')
 
-SECRET = '/bot' + '292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY'
+SECRET = '/bot' + '1642967103:AAFWyWR-Ez6fhTGuFzyNNTrHyrMnIF8ZQA4'
 
 # Bot Configuration
 config = ConfigParser()
@@ -42,7 +42,7 @@ config.read_file(open('config.ini'))
 # Connecting the telegram API
 # Updater will take the information and dispatcher connect the message to
 # the bot
-up = Updater(token='292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY')
+up = Updater(token='1642967103:AAFWyWR-Ez6fhTGuFzyNNTrHyrMnIF8ZQA4')
 dispatcher = up.dispatcher
 
 
@@ -53,7 +53,7 @@ def hello():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-    s = bot.setWebhook('https://read1.herokuapp.com/292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY/HOOK')
+    s = bot.setWebhook('https://read1.herokuapp.com/1642967103:AAFWyWR-Ez6fhTGuFzyNNTrHyrMnIF8ZQA4/HOOK')
     if s:
         return "webhook setup ok"
     else:
