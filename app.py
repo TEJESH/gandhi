@@ -24,7 +24,7 @@ except ImportError:
 
 app = Flask(__name__)
 
-TOKEN = '292106014:AAG9k-cwqLa4V6oZm_1BkfIQIHljnYuqFRY'
+TOKEN = '1642967103:AAFWyWR-Ez6fhTGuFzyNNTrHyrMnIF8ZQA4'
 PORT = int(os.environ.get('PORT', '5000'))
 updater = Updater(TOKEN)
 # add handlers
