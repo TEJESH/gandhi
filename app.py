@@ -60,6 +60,7 @@ def set_webhook():
         return "webhook setup failed"
     
 # Home function
+
 def start(bot, update):
     # Home message
     msg = "Hello {user_name}! I'm {bot_name}. \n"
